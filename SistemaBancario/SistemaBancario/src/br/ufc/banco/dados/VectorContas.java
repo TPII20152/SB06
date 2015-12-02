@@ -2,11 +2,12 @@ package br.ufc.banco.dados;
 
 import java.util.Vector;
 
+import java.io.Serializable;//--------------
 import br.ufc.banco.conta.ContaAbstrata;
 import br.ufc.banco.dados.excecoes.CEException;
 import br.ufc.banco.dados.excecoes.CIException;
 
-public class VectorContas implements IRepositorioContas {
+public class VectorContas implements IRepositorioContas,Serializable {//-----------------
 
 	private Vector<ContaAbstrata> contas = null;
 

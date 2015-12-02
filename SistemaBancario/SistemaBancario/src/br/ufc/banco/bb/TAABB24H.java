@@ -17,6 +17,11 @@ public class TAABB24H {
 
 	public static void main(String[] args) {
 		BancoBrasil banco = new BancoBrasil(new VectorContas());
+		
+		//--------------
+		banco.loadData();
+		//--------------
+		
 		boolean loop = true;
 		while (loop) {
 			switch (menu()) {
@@ -143,6 +148,11 @@ public class TAABB24H {
 			case 9:
 				System.out.print("Tenha um bom dia!!!");
 				loop = false;
+				
+				//--------------------
+				banco.saveData();
+				//------------------
+				
 				break;
 
 			default:

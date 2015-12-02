@@ -1,5 +1,6 @@
 package br.ufc.banco.bb;
 
+import java.io.File;
 import br.ufc.banco.bb.excecoes.TCIException;
 import br.ufc.banco.bb.excecoes.TNRException;
 import br.ufc.banco.conta.ContaAbstrata;
@@ -9,6 +10,7 @@ import br.ufc.banco.conta.excecoes.SIException;
 import br.ufc.banco.dados.IRepositorioContas;
 import br.ufc.banco.dados.excecoes.CEException;
 import br.ufc.banco.dados.excecoes.CIException;
+import br.ufc.banco.dados.serialize.SerialObject;
 
 public class BancoBrasil {
 
@@ -122,4 +124,22 @@ public class BancoBrasil {
 		}
 		return saldo;
 	}
+
+	//-----------------------------------------------------------
+	public void saveData(){
+		SerialObject.serializeObj(this.repositorio, "contas.txt");
+	}
+	
+	public void loadData(){
+		
+		File arquivo = new File("contas.txt");
+		
+		if(!arquivo.exists()){
+			SerialObject.serializeObj(this.repositorio, "contas.txt");
+		}
+		else{
+			this.repositorio = (IRepositorioContas) SerialObject.loadObj("contas.txt");
+		}
+	}
+	//----------------------------------------------------------
 }

@@ -4,7 +4,7 @@ import br.ufc.banco.conta.ContaAbstrata;
 import br.ufc.banco.dados.excecoes.CEException;
 import br.ufc.banco.dados.excecoes.CIException;
 
-public interface IRepositorioContas {
+public interface IRepositorioContas{
 
 	public void inserir(ContaAbstrata conta) throws CEException;
 

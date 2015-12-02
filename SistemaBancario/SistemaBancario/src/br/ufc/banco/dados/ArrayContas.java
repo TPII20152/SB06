@@ -1,10 +1,11 @@
 package br.ufc.banco.dados;
 
+import java.io.Serializable;//-----------
 import br.ufc.banco.conta.ContaAbstrata;
 import br.ufc.banco.dados.excecoes.CEException;
 import br.ufc.banco.dados.excecoes.CIException;
 
-public class ArrayContas implements IRepositorioContas {
+public class ArrayContas implements IRepositorioContas,Serializable {//--------------
 
 	private ContaAbstrata[] contas = null;
 	private int indice = 0;
