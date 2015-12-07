@@ -1,0 +1,1 @@
+Com base nos Casos de Teste e Cenários de Testes descritos acima, especifique e implemente novos Casos de Teste e Cenários de Teste para as classes: BancoBrasil, VectorContas, ArrayContas e demais classes de persistência que forem implementadas. Para lidar com testes onde exceções são esperadas use a anotação @Test(expected = <NomeDaExceção>.class).	
