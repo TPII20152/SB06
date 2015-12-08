@@ -6,6 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.ufc.banco.conta.ContaImposto;
+import br.ufc.banco.conta.excecoes.SIException;
+
 public class ContaImpostoTest {
 	
 	private ContaImposto conta;
@@ -26,7 +29,7 @@ public class ContaImpostoTest {
 	public void testDebitarNormal() throws SIException {
 		conta.creditar(10);
 		conta.debitar(9);
-		double result = 10 - (9+(9* 0,001));
+		double result = 10 - (9+(9* 0.001));
 		assertEquals(result,conta.obterSaldo(),0);
 	}
 	

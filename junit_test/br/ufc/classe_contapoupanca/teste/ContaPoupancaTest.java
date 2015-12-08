@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.ufc.banco.conta.ContaPoupanca;
+
 public class ContaPoupancaTest {
 	private ContaPoupanca conta;
 	
@@ -20,7 +22,7 @@ public class ContaPoupancaTest {
 
 	@Test
 	public void testRendeJuros() {
-		double taxa= 0,01;
+		double taxa= 0.01;
 		conta.creditar(10);
 		conta.creditar(90);
 		double result = conta.obterSaldo()+ (conta.obterSaldo()*taxa);

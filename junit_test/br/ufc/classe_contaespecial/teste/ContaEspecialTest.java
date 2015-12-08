@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.ufc.banco.conta.ContaEspecial;
+
 public class ContaEspecialTest {
 
 	private ContaEspecial conta = null;

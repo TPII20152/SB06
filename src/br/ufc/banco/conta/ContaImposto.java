@@ -1,5 +1,6 @@
 package br.ufc.banco.conta;
 
+import br.ufc.banco.conta.excecoes.SIException;
 
 public class ContaImposto extends ContaAbstrata {
 
