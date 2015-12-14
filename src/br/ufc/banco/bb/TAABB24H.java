@@ -3,6 +3,7 @@ package br.ufc.banco.bb;
 import java.util.Scanner;
 
 import br.ufc.banco.bb.excecoes.TNRException;
+import br.ufc.banco.bb.interfaces.InterfaceMenu;
 import br.ufc.banco.conta.Conta;
 import br.ufc.banco.conta.ContaAbstrata;
 import br.ufc.banco.conta.ContaEspecial;
@@ -22,6 +23,10 @@ public class TAABB24H {
 		banco.loadData();
 		//--------------
 		
+		InterfaceMenu menu = new InterfaceMenu();
+		menu.show();
+		
+		/*
 		boolean loop = true;
 		while (loop) {
 			switch (menu()) {
@@ -158,7 +163,7 @@ public class TAABB24H {
 			default:
 				break;
 			}
-		}
+		} */
 	}
 
 	private static int menu() {

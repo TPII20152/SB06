@@ -16,14 +16,10 @@ import java.awt.event.ActionEvent;
 
 public class InterfaceMenu {
 
-	private ContaAbstrata conta;
-	BancoBrasil banco;
+	private BancoBrasil banco;
 	
 	public InterfaceMenu(){
-		
-		this.conta = null;
 		this.banco = new BancoBrasil(new VectorContas());
-		
 		banco.loadData();
 	}
 	
@@ -51,11 +47,58 @@ public class InterfaceMenu {
 		painel.add(sair);
 		
 		cadastrarConta.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
-  				//String numeroConta = JOptionPane.showInputDialog("Digite o número da conta comum:");
-  				
-  				//conta = new Conta(numeroConta);
+  				MenuCriarConta criarConta = new MenuCriarConta(banco);
+  				criarConta.show();
+  			}
+		});
+		
+		fazerDepposito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceSaque saque = new InterfaceSaque(banco);
+  				saque.show();
+  			}
+		});
+		
+		realizarSaque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceDeposito deposito = new InterfaceDeposito(banco);
+  				deposito.show();
+  			}
+		});
+		
+		transferencia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceTransferencia transferencia = new InterfaceTransferencia(banco);
+  				transferencia.show();
+  			}
+		});
+		
+		visualizarSaldo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceVisualizarSaldo visualizar = new InterfaceVisualizarSaldo(banco);
+  				visualizar.show();
+  			}
+		});
+		
+		removerConta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceRemoverConta remover = new InterfaceRemoverConta(banco);
+  				remover.show();
+  			}
+		});
+		
+		renderJuros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceRenderJuros renderJ = new InterfaceRenderJuros(banco);
+  				renderJ.show();
+  			}
+		});
+		
+		renderBonus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+  				InterfaceRenderBonus renderB = new InterfaceRenderBonus(banco);
+  				renderB.show();
   			}
 		});
 		
