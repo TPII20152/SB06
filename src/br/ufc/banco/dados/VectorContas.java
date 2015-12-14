@@ -7,7 +7,7 @@ import br.ufc.banco.conta.ContaAbstrata;
 import br.ufc.banco.dados.excecoes.CEException;
 import br.ufc.banco.dados.excecoes.CIException;
 
-public class VectorContas implements IRepositorioContas,Serializable {//-----------------
+public class VectorContas implements IRepositorioContas, Serializable {// -----------------
 
 	private Vector<ContaAbstrata> contas = null;
 
@@ -25,12 +25,19 @@ public class VectorContas implements IRepositorioContas,Serializable {//--------
 	}
 
 	public void inserir(ContaAbstrata conta) throws CEException {
-		if (this.procurar(conta.obterNumero()) != null) {
+		
+		if (this.contas.size() > 0) {
+			if (this.procurar(conta.obterNumero()) != null) {
+				System.out.println("numero conta" + conta.obterNumero());
+				this.contas.addElement(conta);
+			} else {
+				throw new CEException(conta.obterNumero());
+			}
+		}else{
 			this.contas.addElement(conta);
-		} else {
-			throw new CEException(conta.obterNumero());
 		}
-	}
+		}
+	
 
 	public ContaAbstrata[] listar() {
 
@@ -49,12 +56,11 @@ public class VectorContas implements IRepositorioContas,Serializable {//--------
 	}
 
 	public ContaAbstrata procurar(String numero) {
-		if (this.contas.size() > 0) {
-			for (int i = 0; i < this.contas.size(); i++) {
-				ContaAbstrata conta = (ContaAbstrata) this.contas.elementAt(i);
-				if (conta.obterNumero().equals(numero)) {
-					return conta;
-				}
+
+		for (int i = 0; i < this.contas.size(); i++) {
+			ContaAbstrata conta = (ContaAbstrata) this.contas.elementAt(i);
+			if (conta.obterNumero().equals(numero)) {
+				return conta;
 			}
 		}
 		return null;
