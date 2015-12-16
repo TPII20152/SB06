@@ -75,7 +75,7 @@ public class MenuCriarConta {
 		
 		JFrame janela = new JFrame("Argentum");
 		janela.add(painel);
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		janela.pack();
 		janela.setVisible(true);
 		janela.setSize(300,300);
