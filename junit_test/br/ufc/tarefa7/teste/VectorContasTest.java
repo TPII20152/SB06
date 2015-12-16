@@ -18,7 +18,7 @@ public class VectorContasTest {
 	public void inicializar(){
 		vContas = new VectorContas();
 		// crinando cantos
-		conta1 = new Conta("asdfghjkl");
+		conta1 = new Conta("abc");
 	}
 	
 	@Test
@@ -31,5 +31,16 @@ public class VectorContasTest {
 		int tamanhoDepois = vContas.numeroContas();
 		
 		assertFalse(tamanhoAntes == tamanhoDepois);	
+	}
+	
+	@Test
+	public void testProcurarConta() throws CEException{
+		String numeroConta = null;
+		
+		vContas.inserir(conta1);
+		
+		Conta conta = (Conta) vContas.procurar("abc");
+		
+		assertEquals(conta1.obterNumero(), conta.obterNumero());
 	}
 }
