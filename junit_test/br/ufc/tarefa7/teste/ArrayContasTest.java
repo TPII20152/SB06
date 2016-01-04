@@ -55,7 +55,7 @@ public class ArrayContasTest {
 		// apagando conta
 		aContas.apagar("abc");
 		
-		//verificar tamanho do Vector
+		//verificar tamanho
 		int tamanhoDepois = aContas.numeroContas();
 		
 		assertEquals(0, tamanhoDepois);
